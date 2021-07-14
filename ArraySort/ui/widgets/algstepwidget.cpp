@@ -20,9 +20,9 @@ AlgStepWidget::AlgStepWidget(int position, QString text) {
     cardsContainer->addWidget(stepNumber);
     cardsContainer->addWidget(stepText);
     stepText->setWordWrap(true);
-    stepText->setContentsMargins(0, 8, 0, 0);
-    stepText->setMinimumWidth(750);
-    stepText->setMaximumWidth(750);
+    stepText->setContentsMargins(16, 8, 0, 0);
+    stepText->setMinimumWidth(750 - 16);
+    stepText->setMaximumWidth(750 - 16);
     cardsContainer->setAlignment(stepNumber, Qt::AlignTop);
     cardsContainer->setAlignment(stepText, Qt::AlignTop);
     cardsContainer->setAlignment(Qt::AlignLeft);
