@@ -20,7 +20,7 @@ BubbleSort::BubbleSort() {
             "for (int i = 0; i < array.size(); i++) {\n"
             "   for (int j = 0; j < array.size() - i - 1; j++) {\n"
             "       if (array[j+1] < array[j]) {\n"
-            "           array.swapItemsAt(j, j+1);\n"
+            "           std::swap(array[j], array[j + 1]);\n"
             "       }\n"
             "   }\n"
             "}";
@@ -41,7 +41,7 @@ QList<QList<int>> BubbleSort::sort(QList<int> array) {
     for (int i = 0; i < array.size(); i++) {
         for (int j = 0; j < array.size() - i - 1; j++) {
             if (array[j+1] < array[j]) {
-                array.swapItemsAt(j, j+1);
+                std::swap(array[j], array[j + 1]);
             }
             // в конце итерации запоминаем изменения
             steps.append(cloneArray(array));
