@@ -234,7 +234,7 @@ void ComparisonFragment::updateSortStep() {
     if (secondProgress >= 100) {
         secondProgress = 100;
     }
-    this->secondProgress->setText("Первая сортировка: "+QString::number(secondProgress)+"%");
+    this->secondProgress->setText("Вторая сортировка: "+QString::number(secondProgress)+"%");
 
     if (secondProgress >= firstProgress) {
         if (secondProgress == firstProgress) {
