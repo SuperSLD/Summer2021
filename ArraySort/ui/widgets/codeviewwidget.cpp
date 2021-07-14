@@ -31,7 +31,7 @@ CodeViewWidget::CodeViewWidget(QString code, QString lang) {
     code.replace("$#SB", "&lt;");
     code.replace("$#SM", "&gt;");
 
-    code = "<pre>" + code + "</pre>";
+    code = "<pre><font color='#FFFFFF'>" + code + "</font></pre>";
 
     // код
     QLabel *codeLable = new QLabel();
