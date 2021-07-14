@@ -25,6 +25,7 @@ SOURCES += \
     sort/basesort.cpp \
     sort/catalog/bubblesort.cpp \
     sort/catalog/combsort.cpp \
+    sort/catalog/insertionsort.cpp \
     sort/catalog/shakersort.cpp \
     sort/sortfactory.cpp \
     stylecontainer.cpp \
@@ -56,6 +57,7 @@ HEADERS += \
     sort/basesort.h \
     sort/catalog/bubblesort.h \
     sort/catalog/combsort.h \
+    sort/catalog/insertionsort.h \
     sort/catalog/shakersort.h \
     sort/sortfactory.h \
     stylecontainer.h \

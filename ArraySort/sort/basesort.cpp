@@ -54,7 +54,7 @@ QList<int> BaseSort::generateStartArray(int size) {
         newList.append(i);
     }
     for (int i = 0; i < size; i++) {
-        std::swap(newList[i], newList[arc4random()%size]);
+        std::swap(newList[i], newList[qrand()%size]);
     }
     return newList;
 }

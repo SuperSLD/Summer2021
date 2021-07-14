@@ -2,6 +2,7 @@
 
 #include <sort/catalog/bubblesort.h>
 #include <sort/catalog/combsort.h>
+#include <sort/catalog/insertionsort.h>
 #include <sort/catalog/shakersort.h>
 
 SortFactory::SortFactory() {
@@ -19,7 +20,7 @@ BaseSort* SortFactory::create(int key) {
     } else if (key == 2) {
         baseSort = new CombSort();
     } else if (key == 3) {
-        baseSort = new BubbleSort();
+        baseSort = new InsertionSort();
     } else if (key == 4) {
         baseSort = new BubbleSort();
     }
