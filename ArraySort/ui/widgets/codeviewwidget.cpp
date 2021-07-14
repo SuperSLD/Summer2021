@@ -27,6 +27,19 @@ CodeViewWidget::CodeViewWidget(QString code, QString lang) {
         code.replace(" "+currentKeywords[i], "<font color='"+COLOR_SECONDARY+"'> "+currentKeywords[i]+"</font>");
     }
     code.replace("\n", "<br>");
+
+    // находим коментарии
+    bool isComment = false;
+    for (int i = 0; i < code.length() - 1; i++ ) {
+        if (code[i] == "/" && code[i+1] == "/") {
+            isComment = true;
+            code.insert(i, "<font color='"+COLOR_TEXT_HINT+"'>");
+        }
+        if (isComment && code[i] == "b" && code[i+1] == "r") {
+            isComment = false;
+            code.insert(i, "</font>");
+        }
+    }
     // меняем скобки
     code.replace("$#SB", "&lt;");
     code.replace("$#SM", "&gt;");
