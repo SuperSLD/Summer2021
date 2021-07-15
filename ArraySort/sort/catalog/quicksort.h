@@ -1,7 +1,8 @@
 #ifndef QUICKSORT_H
 #define QUICKSORT_H
 
-#include <sort/quicksort.h>
+#include <sort/basesort.h>
+
 
 class QuickSort : public BaseSort {
 public:
