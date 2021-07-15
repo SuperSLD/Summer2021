@@ -27,7 +27,7 @@ MainWindow::MainWindow(QWidget *parent)
         container->setObjectName("window");
 
         this->setWindowTitle("Справочник сортировок");
-        this->setWindowIcon(QIcon(":/resc/resc/planet.svg"));
+        this->setWindowIcon(QIcon(":/resc/resc/splash.svg"));
         this->resize(QDesktopWidget().availableGeometry(this).size() * 0.7);
         this->setCentralWidget(container);
     } catch (std::exception& e) {
