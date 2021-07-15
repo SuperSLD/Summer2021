@@ -23,6 +23,12 @@ protected:
     QString stepValue;
     QList<QString> algoritm;
     QString source = "";
+    QList<QList<QString>> nominations;
+
+    const QList<QString> COOL_NOMINATION = {"cool", "Один из самых прикольных методов сортировки"};
+    const QList<QString> FAST_NOMINATION = {"fast", "Один из самых прикольных методов сортировки"};
+    const QList<QString> SLOW_NOMINATION = {"slow", "Один из самых прикольных методов сортировки"};
+    const QList<QString> SIMPLE_NOMINATION = {"simple", "Один из самых прикольных методов сортировки"};
 public:
     BaseSort();
     ~BaseSort();
@@ -128,6 +134,17 @@ public:
     QList<int> cloneArray(QList<int> array);
 
     /**
+     * @brief cloneArray
+     *
+     * Создание нкизменяемой копии массива.
+     * Из массива по указателю;
+     *
+     * @param array исходный массив
+     * @return копия.
+     */
+    QList<int> cloneArray(int *array, int size);
+
+    /**
      * @brief getAlgoritm
      *
      * Получение шагов алгоритма для описания
@@ -145,6 +162,16 @@ public:
      * @return строка с кодом.
      */
     QString getSourceCode();
+
+    /**
+     * @brief getNominations
+     *
+     * Получение номинаций которые заслужил
+     * данный метод сортировки.
+     *
+     * @return строковые кодовые названия.
+     */
+    QList<QList<QString>> getNominations();
 };
 
 #endif // BASESORT_H

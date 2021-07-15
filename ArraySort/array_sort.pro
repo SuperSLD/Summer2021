@@ -41,6 +41,7 @@ SOURCES += \
     ui/splashfragment.cpp \
     ui/widgets/algstepwidget.cpp \
     ui/widgets/codeviewwidget.cpp \
+    ui/widgets/nominationwidget.cpp \
     ui/widgets/slidingstackedwidget.cpp \
     ui/widgets/sortitemwidget.cpp \
     ui/widgets/sortstepwidget.cpp \
@@ -75,6 +76,7 @@ HEADERS += \
     ui/splashfragment.h \
     ui/widgets/algstepwidget.h \
     ui/widgets/codeviewwidget.h \
+    ui/widgets/nominationwidget.h \
     ui/widgets/slidingstackedwidget.h \
     ui/widgets/sortitemwidget.h \
     ui/widgets/sortstepwidget.h \

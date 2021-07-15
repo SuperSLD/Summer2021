@@ -25,6 +25,11 @@ BubbleSort::BubbleSort() {
             "       }\n"
             "   }\n"
             "}";
+
+    // плашки с номинациями в которых этот алгоритм лучший
+    //this->nominations.append(SLOW_NOMINATION);
+    //this->nominations.append(COOL_NOMINATION);
+    //this->nominations.append(SIMPLE_NOMINATION);
 }
 
 QList<QList<int>> BubbleSort::sort(QList<int> array) {

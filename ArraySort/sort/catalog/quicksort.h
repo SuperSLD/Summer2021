@@ -9,6 +9,8 @@ public:
     QuickSort();
 
     QList<QList<int>> sort(QList<int> array) override;
+
+    void qsortRecursive(QList<QList<int>> *steps, int *fullMass, int *numbers, int left, int right);
 };
 
 #endif // QUICKSORT_H
