@@ -4,6 +4,7 @@
 #include <sort/catalog/combsort.h>
 #include <sort/catalog/insertionsort.h>
 #include <sort/catalog/shakersort.h>
+#include <sort/catalog/selectionsort.h>
 
 SortFactory::SortFactory() {
 
@@ -22,7 +23,7 @@ BaseSort* SortFactory::create(int key) {
     } else if (key == 3) {
         baseSort = new InsertionSort();
     } else if (key == 4) {
-        baseSort = new BubbleSort();
+        baseSort = new SelectionSort();
     }
 
     // дальше говорим сортировке по какому
