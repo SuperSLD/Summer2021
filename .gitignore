@@ -13,7 +13,11 @@ bin-release/
 *.ipa
 *.apk
 
+# QT собранные проекты, нафиг их тащить в гит?????
 build-*
+
+# MacOs убираем папки которые не доступны простым смертным.  
+*.DS_Store
 
 # Project files, i.e. `.project`, `.actionScriptProperties` and `.flexProperties`
 # should NOT be excluded as they contain compiler settings and other important

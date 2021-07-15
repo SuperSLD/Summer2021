@@ -28,6 +28,17 @@ using namespace screens;
 using namespace styles;
 
 SelectSecondFragment::SelectSecondFragment() {
+    // все что нужно снова в бинде
+}
+
+SelectSecondFragment::~SelectSecondFragment() {
+    delete factory;
+    delete itemsContainer;
+}
+
+void SelectSecondFragment::bindData(BaseModel *model) {
+    this->firstSelection = dynamic_cast<ComparisonModel*>(model);
+
     QHBoxLayout *mainHLayout = new QHBoxLayout;
     QVBoxLayout *mainVLayout = new QVBoxLayout;
 
@@ -62,22 +73,15 @@ SelectSecondFragment::SelectSecondFragment() {
     // создаем сортировки через цикл по ключам и кидаем в список
     factory = new SortFactory();
     for (int key = 0; key <= factory->getMaxKey(); key++) {
-        SortItemWidget *sortWidget = new SortItemWidget(factory->create(key), "Сравнить");
-        connect(sortWidget, &SortItemWidget::selectSort, this, &SelectSecondFragment::onSelectSort);
-        itemsContainer->addWidget(sortWidget);
+        if (key != this->firstSelection->firstId) {
+            SortItemWidget *sortWidget = new SortItemWidget(factory->create(key), "Сравнить");
+            connect(sortWidget, &SortItemWidget::selectSort, this, &SelectSecondFragment::onSelectSort);
+            itemsContainer->addWidget(sortWidget);
+        }
     }
 
     this->setLayout(mainHLayout);
     this->setObjectName("fragment");
-}
-
-SelectSecondFragment::~SelectSecondFragment() {
-    delete factory;
-    delete itemsContainer;
-}
-
-void SelectSecondFragment::bindData(BaseModel *model) {
-    this->firstSelection = dynamic_cast<ComparisonModel*>(model);
 }
 
 void SelectSecondFragment::onBack() {

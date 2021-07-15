@@ -27,14 +27,6 @@ BubbleSort::BubbleSort() {
             "}";
 }
 
-/**
- * @brief BubbleSort::sort
- *
- * Реализация сортировки методом пузырька.
- *
- * @param array изначальный массив.
- * @return шари решения.
- */
 QList<QList<int>> BubbleSort::sort(QList<int> array) {
     QList<QList<int>> steps;
     // добавляем изначальное значение в шаги
