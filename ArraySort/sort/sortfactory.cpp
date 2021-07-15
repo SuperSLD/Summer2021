@@ -5,6 +5,7 @@
 #include <sort/catalog/insertionsort.h>
 #include <sort/catalog/shakersort.h>
 #include <sort/catalog/selectionsort.h>
+#include <sort/catalog/quicksort.h>
 
 SortFactory::SortFactory() {
 
@@ -24,6 +25,8 @@ BaseSort* SortFactory::create(int key) {
         baseSort = new InsertionSort();
     } else if (key == 4) {
         baseSort = new SelectionSort();
+    } else if (key == 5) {
+        baseSort = new QuickSort();
     }
 
     // дальше говорим сортировке по какому
@@ -34,5 +37,5 @@ BaseSort* SortFactory::create(int key) {
 
 int SortFactory::getMaxKey() {
     // последняя цифра в условии -> if (key == вот эта)
-    return 4;
+    return 5;
 }
