@@ -46,7 +46,7 @@ QList<QList<int>> InsertionSort::sort(QList<int> array) {
           steps.append(cloneArray(array));
        }
        array[j] = x;
-        steps.append(cloneArray(array));
+       steps.append(cloneArray(array));
      }
     return steps;
 }

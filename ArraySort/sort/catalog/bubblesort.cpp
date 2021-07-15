@@ -20,20 +20,13 @@ BubbleSort::BubbleSort() {
             "for (int i = 0; i < array.size(); i++) {\n"
             "   for (int j = 0; j < array.size() - i - 1; j++) {\n"
             "       if (array[j+1] < array[j]) {\n"
+            "           // меняем элементы местами\n"
             "           std::swap(array[j], array[j + 1]);\n"
             "       }\n"
             "   }\n"
             "}";
 }
 
-/**
- * @brief BubbleSort::sort
- *
- * Реализация сортировки методом пузырька.
- *
- * @param array изначальный массив.
- * @return шари решения.
- */
 QList<QList<int>> BubbleSort::sort(QList<int> array) {
     QList<QList<int>> steps;
     // добавляем изначальное значение в шаги
