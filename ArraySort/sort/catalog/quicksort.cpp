@@ -44,7 +44,7 @@ QuickSort::QuickSort(){
       "left = l_hold;\n"
       "right = r_hold;\n"
       "if (left < pivot)\n"
-      "    qsortRecursive(steps, fullMass, numbers, left, pivot - 1)\n;"
+      "    qsortRecursive(steps, fullMass, numbers, left, pivot - 1);\n"
       "if (right > pivot)\n"
       "    qsortRecursive(steps, fullMass, numbers, pivot + 1, right);";
 
