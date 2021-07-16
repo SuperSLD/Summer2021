@@ -19,21 +19,21 @@ NominationWidget::NominationWidget(QList<QString> nomination) {
     QFont font = bigText->font();
     font.setPointSize(60);
     bigText->setFont(font);
+    bigText->setForegroundRole(QPalette::Text);
+    container->setAlignment(Qt::AlignLeft);
+    mainLayout->addLayout(container);
+    container->addWidget(bigText);
+    // делаем градиент
     QPalette labelPal;
-    QLinearGradient colorGradient = QLinearGradient(0, 0, bigText->width(), 0);
+    bigText->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
+    QLinearGradient colorGradient = QLinearGradient(0, 0, bigText->width(), bigText->height());
     colorGradient.setSpread(QGradient::RepeatSpread);
     colorGradient.setColorAt(0, QColor("#F99272"));
-    colorGradient.setColorAt(0.5, QColor("#72B8F9"));
+    colorGradient.setColorAt(0.26, QColor("#72B8F9"));
     QBrush brush(colorGradient);
     labelPal.setBrush(QPalette::ColorRole::Text, brush);
     bigText->setWordWrap(true);
     bigText->setPalette(labelPal);
-    bigText->setForegroundRole(QPalette::Text);
-    bigText->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
-    container->addWidget(bigText);
-    container->setAlignment(Qt::AlignLeft);
-    mainLayout->addLayout(container);
-
 
     // заголовок
     QLabel *title = new QLabel(nomination[1]);

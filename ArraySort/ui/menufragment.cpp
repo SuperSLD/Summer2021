@@ -7,11 +7,18 @@
 #include <stylecontainer.h>
 #include <implfragmentfactory.h>
 #include <QCoreApplication>
+#include <QDateTime>
+
+#include <ui/widgets/sortitemwidget.h>
+
+#include <sort/sortfactory.h>
+
+#include <models/idcontainer.h>
 using namespace screens;
 using namespace styles;
 
 MenuFragment::MenuFragment() {
-    QVBoxLayout *mainVLayout = new QVBoxLayout;
+    mainVLayout = new QVBoxLayout;
     QHBoxLayout *mainHLayout = new QHBoxLayout;
     QFrame *centerConainer = new QFrame;
 
@@ -63,16 +70,25 @@ MenuFragment::MenuFragment() {
     startContent->addWidget(mainImage);
     startContent->addLayout(startMainLayout);
 
-    mainHLayout->addWidget(centerConainer);
+    // случайный метод сортировки
+    qsrand(QTime::currentTime().msec());
+    SortFactory *factory = new SortFactory();
+    int key = qrand() % (factory->getMaxKey() + 1);
+    randSort = new SortItemWidget(factory->create(key));
+    connect(randSort, &SortItemWidget::selectSort, this, &MenuFragment::openRandDetail);
+
+    mainVLayout->addWidget(centerConainer);
+    mainVLayout->addWidget(randSort);
     mainHLayout->setAlignment(Qt::AlignCenter);
-    mainVLayout->addLayout(mainHLayout);
+    mainHLayout->addLayout(mainVLayout);
     mainVLayout->setAlignment(Qt::AlignCenter);
 
-    this->setLayout(mainVLayout);
+    this->setLayout(mainHLayout);
 }
 
 MenuFragment::~MenuFragment() {
-
+    delete mainVLayout;
+    delete randSort;
 }
 
 void MenuFragment::openCatalog() {
@@ -85,4 +101,8 @@ void MenuFragment::openVs() {
 
 void MenuFragment::closeGame() {
     emit navigateTo(CONFIRM_EXIT_TAG);
+}
+
+void MenuFragment::openRandDetail(int key) {
+    emit navigateWhithData(CATALOG_DETAIL_TAG, new IdContainer(key));
 }
