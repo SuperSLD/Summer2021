@@ -84,6 +84,6 @@ QString BaseSort::getSourceCode() {
     return this->source;
 }
 
-QList<QList<QString>> BaseSort::getNominations() {
-    return this->nominations;
+QList<QList<QString>> BaseSort::getMarkers() {
+    return this->markers;
 }

@@ -21,8 +21,8 @@ SelectionSort::SelectionSort(){
             "    std::swap(*i, *j);\n"
             "}";
 
-    this->nominations.append(SIMPLE_NOMINATION);
-    this->nominations.append(SLOW_NOMINATION);
+    this->markers.append(SIMPLE_MARKER);
+    this->markers.append(FUN_MARKER);
 }
 
 QList<QList<int>> SelectionSort::sort(QList<int> array) {

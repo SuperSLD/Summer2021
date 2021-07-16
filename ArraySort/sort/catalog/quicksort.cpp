@@ -48,9 +48,9 @@ QuickSort::QuickSort(){
       "if (right > pivot)\n"
       "    qsortRecursive(steps, fullMass, numbers, pivot + 1, right);";
 
-    this->nominations.append(COOL_NOMINATION);
-    this->nominations.append(FAST_NOMINATION);
-    this->nominations.append(RECURSION_NOMINATION);
+    this->markers.append(COOL_MARKER);
+    this->markers.append(FAST_MARKER);
+    this->markers.append(RECURSION_MARKER);
 
 }
 
