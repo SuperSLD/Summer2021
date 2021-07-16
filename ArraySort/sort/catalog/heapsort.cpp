@@ -16,23 +16,26 @@ HeapSort::HeapSort()
 
     // код алгоритма
     this->source =
+            "std::make_heap(array.begin(), array.end());\n"
             "for (auto i = array.end(); i != array.begin(); --i) {\n"
-            "std::pop_heap(array.begin(), i);\n"
+            "   std::pop_heap(array.begin(), i);\n"
             "}"
             ;
 
     this->markers.append(COOL_MARKER);
     this->markers.append(SIMPLE_MARKER);
+    this->markers.append(FUN_MARKER);
 
 }
 
 QList<QList<int>> HeapSort::sort(QList<int> array) {
     QList<QList<int>> steps;
     // добавляем изначальное значение
+    steps.append(cloneArray(array));
     std::make_heap(array.begin(), array.end());
     for (auto i = array.end(); i != array.begin(); --i) {
-    std::pop_heap(array.begin(), i);
-    steps.append(cloneArray(array));
+        std::pop_heap(array.begin(), i);
+        steps.append(cloneArray(array));
      }
     return steps;
 }
