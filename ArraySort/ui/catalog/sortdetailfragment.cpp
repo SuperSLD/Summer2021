@@ -2,6 +2,7 @@
 
 #include <ui/widgets/algstepwidget.h>
 #include <ui/widgets/codeviewwidget.h>
+#include <ui/widgets/nominationwidget.h>
 #include <ui/widgets/sortstepwidget.h>
 #include <ui/widgets/toolbarwidget.h>
 
@@ -156,6 +157,47 @@ void SortDetailFragment::bindData(BaseModel *model) {
 
         // отображение исходного кода
         itemsContainer->addWidget(new CodeViewWidget(sort->getSourceCode()));
+    }
+
+    if (sort->getNominations().length() > 0) {
+        // заголовок для номинаций
+        QLabel *codeTitle = new QLabel("Что в итоге можно сказать?");
+        codeTitle->setStyleSheet(TITLE_LABLE);
+        codeTitle->setContentsMargins(0, 16, 0, 12);
+        codeTitle->setMaximumWidth(874);
+        codeTitle->setWordWrap(true);
+        itemsContainer->addWidget(codeTitle);
+
+        // короткое описание для номинаций
+        QLabel *codeShortDesk = new QLabel("Небольшие отметки от составителей справочника, чтоб в методах было проще ориентироваться.");
+        codeShortDesk->setStyleSheet(HINT_LABLE);
+        codeShortDesk->setContentsMargins(0, 0, 0, 8);
+        codeShortDesk->setMaximumWidth(874);
+        codeShortDesk->setWordWrap(true);
+        itemsContainer->addWidget(codeShortDesk);
+
+        // контейнер для номинаций
+        QHBoxLayout *nominationHorisontal = new QHBoxLayout;
+        QVBoxLayout *firstCol = new QVBoxLayout;
+        QVBoxLayout *secondCol = new QVBoxLayout;
+        firstCol->setContentsMargins(0,0,8,0);
+        firstCol->setAlignment(Qt::AlignTop);
+        secondCol->setContentsMargins(8,0,0,0);
+        secondCol->setAlignment(Qt::AlignTop);
+        nominationHorisontal->setContentsMargins(0,0,0,0);
+        nominationHorisontal->addLayout(firstCol);
+        nominationHorisontal->addLayout(secondCol);
+        itemsContainer->addLayout(nominationHorisontal);
+
+        // заполнение номинаций
+        for (int i = 0; i < sort->getNominations().size(); i++) {
+            NominationWidget *nomWidget = new NominationWidget(sort->getNominations()[i]);
+            if (i % 2 == 0) {
+                firstCol->addWidget(nomWidget);
+            } else {
+                secondCol->addWidget(nomWidget);
+            }
+        }
     }
 
     // кнопка для переходв к сравнению

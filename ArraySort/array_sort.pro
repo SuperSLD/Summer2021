@@ -26,6 +26,8 @@ SOURCES += \
     sort/catalog/bubblesort.cpp \
     sort/catalog/combsort.cpp \
     sort/catalog/insertionsort.cpp \
+    sort/catalog/quicksort.cpp \
+    sort/catalog/selectionsort.cpp \
     sort/catalog/shakersort.cpp \
     sort/sortfactory.cpp \
     stylecontainer.cpp \
@@ -39,6 +41,7 @@ SOURCES += \
     ui/splashfragment.cpp \
     ui/widgets/algstepwidget.cpp \
     ui/widgets/codeviewwidget.cpp \
+    ui/widgets/nominationwidget.cpp \
     ui/widgets/slidingstackedwidget.cpp \
     ui/widgets/sortitemwidget.cpp \
     ui/widgets/sortstepwidget.cpp \
@@ -58,6 +61,8 @@ HEADERS += \
     sort/catalog/bubblesort.h \
     sort/catalog/combsort.h \
     sort/catalog/insertionsort.h \
+    sort/catalog/quicksort.h \
+    sort/catalog/selectionsort.h \
     sort/catalog/shakersort.h \
     sort/sortfactory.h \
     stylecontainer.h \
@@ -71,6 +76,7 @@ HEADERS += \
     ui/splashfragment.h \
     ui/widgets/algstepwidget.h \
     ui/widgets/codeviewwidget.h \
+    ui/widgets/nominationwidget.h \
     ui/widgets/slidingstackedwidget.h \
     ui/widgets/sortitemwidget.h \
     ui/widgets/sortstepwidget.h \

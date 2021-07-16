@@ -67,10 +67,23 @@ QList<int> BaseSort::cloneArray(QList<int> array) {
     return newList;
 }
 
+QList<int> BaseSort::cloneArray(int *array, int size) {
+    QList<int> newList;
+    for (int i = 0; i < size; i++) {
+        newList.append(array[i]);
+    }
+    return newList;
+}
+
+
 QList<QString> BaseSort::getAlgoritm() {
     return this->algoritm;
 }
 
 QString BaseSort::getSourceCode() {
     return this->source;
+}
+
+QList<QList<QString>> BaseSort::getNominations() {
+    return this->nominations;
 }
