@@ -7,6 +7,7 @@
 #include <sort/catalog/selectionsort.h>
 #include <sort/catalog/quicksort.h>
 #include <sort/catalog/heapsort.h>
+#include <sort/catalog/gnomesort.h>
 
 SortFactory::SortFactory() {
 
@@ -30,6 +31,8 @@ BaseSort* SortFactory::create(int key) {
         baseSort = new QuickSort();
     } else if (key == 6) {
         baseSort = new HeapSort();
+    } else if (key == 7) {
+        baseSort = new GnomeSort();
     }
 
     // дальше говорим сортировке по какому
@@ -40,5 +43,5 @@ BaseSort* SortFactory::create(int key) {
 
 int SortFactory::getMaxKey() {
     // последняя цифра в условии -> if (key == вот эта)
-    return 6;
+    return 7;
 }
