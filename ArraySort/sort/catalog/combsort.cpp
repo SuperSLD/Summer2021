@@ -32,6 +32,7 @@ CombSort::CombSort() {
            "     step /= factor; \n"
            "}";
 
+    this->nominations.append(SIMPLE_NOMINATION);
 }
 
 

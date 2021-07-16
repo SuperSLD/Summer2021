@@ -20,6 +20,9 @@ SelectionSort::SelectionSort(){
             "    auto j = std::min_element(i, array.end());\n"
             "    std::swap(*i, *j);\n"
             "}";
+
+    this->nominations.append(SIMPLE_NOMINATION);
+    this->nominations.append(SLOW_NOMINATION);
 }
 
 QList<QList<int>> SelectionSort::sort(QList<int> array) {
