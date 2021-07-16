@@ -15,7 +15,17 @@ GnomeSort::GnomeSort()
     this->algoritm.append("Доходим до конца массива");
     this->algoritm.append("Повторяем действия n раз");
 
+    this->source =
+        "int i = 0;\n"
+        "while (i < array.length()) {\n"
+        "   if (i == 0 || array[i-1] <= array[i]) {\n"
+        "      i++;\n"
+        "   } else {\n"
+        "       int tmp = array[i]; array[i] = array[i-1]; array[--i] = tmp;\n"
+        "   }\n"
+        "}";
 
+    this->markers.append(SLOW_MARKER);
 }
 QList<QList<int>> GnomeSort::sort(QList<int> array) {
     QList<QList<int>> steps;
@@ -23,10 +33,13 @@ QList<QList<int>> GnomeSort::sort(QList<int> array) {
     steps.append(cloneArray(array));
     int i = 0;
     while (i < array.length()) {
-        if (i == 0 || array[i-1] <= array[i]) i++;
-        else {int tmp = array[i]; array[i] = array[i-1]; array[-i] = tmp;}
-    }
-            // в конце итерации запоминаем изменения
+        if (i == 0 || array[i-1] <= array[i]) {
+            i++;
+        } else {
+            int tmp = array[i]; array[i] = array[i-1]; array[--i] = tmp;
+            //std::swap(array[i], array[i-1]);
+        }
         steps.append(cloneArray(array));
+    }
     return steps;
 }
