@@ -34,6 +34,8 @@ ShakerSort::ShakerSort() {
             "   }\n"
             "   left = control;\n"
             "} while (left < right);\n";
+
+    this->markers.append(SLOW_MARKER);
 }
 
 QList<QList<int>> ShakerSort::sort(QList<int> array) {

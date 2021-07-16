@@ -32,6 +32,7 @@ CombSort::CombSort() {
            "     step /= factor; \n"
            "}";
 
+    this->markers.append(SIMPLE_MARKER);
 }
 
 

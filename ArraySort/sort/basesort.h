@@ -23,6 +23,14 @@ protected:
     QString stepValue;
     QList<QString> algoritm;
     QString source = "";
+    QList<QList<QString>> markers;
+
+    const QList<QString> RECURSION_MARKER = {"recursion", "Содрежит рекурсию и причиняет этим боль"};
+    const QList<QString> COOL_MARKER = {"#1", "Один из самых прикольных методов сортировки"};
+    const QList<QString> FAST_MARKER = {"O(n)", "Один из самых быстрых алгоритмов"};
+    const QList<QString> SLOW_MARKER = {"O(n^10)", "Скорость - это не про этот метод сортировки"};
+    const QList<QString> SIMPLE_MARKER = {"simple", "Очень прост в реализации и в написании кода"};
+    const QList<QString> FUN_MARKER = {"fun()", "Использована сторонняя быстрая функция"};
 public:
     BaseSort();
     ~BaseSort();
@@ -128,6 +136,17 @@ public:
     QList<int> cloneArray(QList<int> array);
 
     /**
+     * @brief cloneArray
+     *
+     * Создание нкизменяемой копии массива.
+     * Из массива по указателю;
+     *
+     * @param array исходный массив
+     * @return копия.
+     */
+    QList<int> cloneArray(int *array, int size);
+
+    /**
      * @brief getAlgoritm
      *
      * Получение шагов алгоритма для описания
@@ -145,6 +164,15 @@ public:
      * @return строка с кодом.
      */
     QString getSourceCode();
+
+    /**
+     * @brief getMarkers
+     *
+     * Получение маркеров.
+     *
+     * @return маркеры.
+     */
+    QList<QList<QString>> getMarkers();
 };
 
 #endif // BASESORT_H
