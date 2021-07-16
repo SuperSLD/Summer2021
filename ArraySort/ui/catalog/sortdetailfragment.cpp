@@ -180,9 +180,9 @@ void SortDetailFragment::bindData(BaseModel *model) {
         QHBoxLayout *nominationHorisontal = new QHBoxLayout;
         QVBoxLayout *firstCol = new QVBoxLayout;
         QVBoxLayout *secondCol = new QVBoxLayout;
-        firstCol->setContentsMargins(0,0,8,0);
+        firstCol->setContentsMargins(0,0,0,0);
         firstCol->setAlignment(Qt::AlignTop);
-        secondCol->setContentsMargins(8,0,0,0);
+        secondCol->setContentsMargins(0,0,0,0);
         secondCol->setAlignment(Qt::AlignTop);
         nominationHorisontal->setContentsMargins(0,0,0,0);
         nominationHorisontal->addLayout(firstCol);

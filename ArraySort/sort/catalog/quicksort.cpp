@@ -75,6 +75,7 @@ void QuickSort::qsortRecursive(QList<QList<int>> *steps, int *fullMass, int *num
       while (left < right) {
             while ((numbers[right] >= pivot) && (left < right)) {
                 right--;
+                steps->append(cloneArray(fullMass, steps->first().size()));
             }
             if (left != right) {
                 numbers[left] = numbers[right];
@@ -82,6 +83,7 @@ void QuickSort::qsortRecursive(QList<QList<int>> *steps, int *fullMass, int *num
             }
             while ((numbers[left] <= pivot) && (left < right)) {
                 left++;
+                steps->append(cloneArray(fullMass, steps->first().size()));
             }
             if (left != right) {
                 numbers[right] = numbers[left];

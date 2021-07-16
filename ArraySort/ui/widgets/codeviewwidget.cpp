@@ -26,6 +26,7 @@ CodeViewWidget::CodeViewWidget(QString code, QString lang) {
         code.replace(currentKeywords[i]+" ", "<font color='"+COLOR_SECONDARY+"'>"+currentKeywords[i]+" </font>");
         code.replace(" "+currentKeywords[i], "<font color='"+COLOR_SECONDARY+"'> "+currentKeywords[i]+"</font>");
     }
+    code.replace("std::", "<font color='#697CE4'>std::</font>");
     code.replace("\n", "<br>");
 
     // находим коментарии

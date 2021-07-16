@@ -28,7 +28,7 @@ MainWindow::MainWindow(QWidget *parent)
 
         this->setWindowTitle("Справочник сортировок");
         this->setWindowIcon(QIcon(":/resc/resc/splash.svg"));
-        this->resize(QDesktopWidget().availableGeometry(this).size() * 0.7);
+        this->resize(QDesktopWidget().availableGeometry(this).size() * 0.86);
         this->setCentralWidget(container);
     } catch (std::exception& e) {
         qDebug("%s", e.what());
