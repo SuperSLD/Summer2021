@@ -159,7 +159,7 @@ void SortDetailFragment::bindData(BaseModel *model) {
         itemsContainer->addWidget(new CodeViewWidget(sort->getSourceCode()));
     }
 
-    if (sort->getNominations().length() > 0) {
+    if (sort->getMarkers().length() > 0) {
         // заголовок для номинаций
         QLabel *codeTitle = new QLabel("Что в итоге можно сказать?");
         codeTitle->setStyleSheet(TITLE_LABLE);
@@ -190,15 +190,15 @@ void SortDetailFragment::bindData(BaseModel *model) {
         itemsContainer->addLayout(nominationHorisontal);
 
         // заполнение номинаций
-        for (int i = 0; i < sort->getNominations().size(); i++) {
-            NominationWidget *nomWidget = new NominationWidget(sort->getNominations()[i]);
+        for (int i = 0; i < sort->getMarkers().size(); i++) {
+            NominationWidget *nomWidget = new NominationWidget(sort->getMarkers()[i]);
             if (i % 2 == 0) {
                 firstCol->addWidget(nomWidget);
             } else {
                 secondCol->addWidget(nomWidget);
             }
         }
-        if (sort->getNominations().size() == 1) {
+        if (sort->getMarkers().size() == 1) {
             firstCol->setContentsMargins(0,0,0,0);
             secondCol->setContentsMargins(0,0,0,0);
         }
