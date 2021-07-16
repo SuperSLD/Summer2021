@@ -198,6 +198,10 @@ void SortDetailFragment::bindData(BaseModel *model) {
                 secondCol->addWidget(nomWidget);
             }
         }
+        if (sort->getNominations().size() == 1) {
+            firstCol->setContentsMargins(0,0,0,0);
+            secondCol->setContentsMargins(0,0,0,0);
+        }
     }
 
     // кнопка для переходв к сравнению

@@ -25,10 +25,11 @@ protected:
     QString source = "";
     QList<QList<QString>> nominations;
 
-    const QList<QString> COOL_NOMINATION = {"cool", "Один из самых прикольных методов сортировки"};
-    const QList<QString> FAST_NOMINATION = {"fast", "Один из самых прикольных методов сортировки"};
-    const QList<QString> SLOW_NOMINATION = {"slow", "Один из самых прикольных методов сортировки"};
-    const QList<QString> SIMPLE_NOMINATION = {"simple", "Один из самых прикольных методов сортировки"};
+    const QList<QString> RECURSION_NOMINATION = {"recursion", "Содрежит рекурсию и причиняет этим боль"};
+    const QList<QString> COOL_NOMINATION = {"#1", "Один из самых прикольных методов сортировки"};
+    const QList<QString> FAST_NOMINATION = {"O(n)", "Один из самых быстрых алгоритмов"};
+    const QList<QString> SLOW_NOMINATION = {"O(n^10)", "Скорость - это не про этот метод сортировки"};
+    const QList<QString> SIMPLE_NOMINATION = {"simple", "Очень прост в реализации и в написании кода"};
 public:
     BaseSort();
     ~BaseSort();

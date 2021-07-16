@@ -30,6 +30,8 @@ InsertionSort::InsertionSort()
             "   array[j] = x;\n"
             "}";
 
+    this->nominations.append(COOL_NOMINATION);
+    this->nominations.append(FAST_NOMINATION);
 }
 
 

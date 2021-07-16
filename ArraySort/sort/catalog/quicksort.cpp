@@ -47,6 +47,11 @@ QuickSort::QuickSort(){
       "    qsortRecursive(steps, fullMass, numbers, left, pivot - 1)\n;"
       "if (right > pivot)\n"
       "    qsortRecursive(steps, fullMass, numbers, pivot + 1, right);";
+
+    this->nominations.append(COOL_NOMINATION);
+    this->nominations.append(FAST_NOMINATION);
+    this->nominations.append(RECURSION_NOMINATION);
+
 }
 
 QList<QList<int>> QuickSort::sort(QList<int> array) {
