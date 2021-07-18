@@ -56,6 +56,8 @@ namespace styles{
             "font-size:14px;"
             "background-color:"+COLOR_BACKGROUND+";"
             "border:none;";
+    static const QString MARKER_LABLE =
+            "font-size:60px;";
 
     static const QString BUTTON_SOLID =
             "QPushButton {"

@@ -31,6 +31,11 @@ protected:
     const QList<QString> SLOW_MARKER = {"O(n^10)", "Скорость - это не про этот метод сортировки"};
     const QList<QString> SIMPLE_MARKER = {"simple", "Очень прост в реализации и в написании кода"};
     const QList<QString> FUN_MARKER = {"fun()", "Использована сторонняя быстрая функция"};
+
+    QList<QList<QString>> allMarkers = {
+        RECURSION_MARKER, COOL_MARKER, FAST_MARKER,
+        SLOW_MARKER, SIMPLE_MARKER, FUN_MARKER
+    };
 public:
     BaseSort();
     ~BaseSort();
@@ -170,9 +175,18 @@ public:
      *
      * Получение маркеров.
      *
-     * @return маркеры.
+     * @return маркеры для текущей сортировки.
      */
     QList<QList<QString>> getMarkers();
+
+    /**
+     * @brief getAllMarkers
+     *
+     * Получение всех возможных маркеров.
+     *
+     * @return все маркеры
+     */
+    QList<QList<QString>> getAllMarkers();
 };
 
 #endif // BASESORT_H

@@ -87,3 +87,7 @@ QString BaseSort::getSourceCode() {
 QList<QList<QString>> BaseSort::getMarkers() {
     return this->markers;
 }
+
+QList<QList<QString>> BaseSort::getAllMarkers() {
+    return this->allMarkers;
+}

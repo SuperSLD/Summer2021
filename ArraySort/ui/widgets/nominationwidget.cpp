@@ -16,9 +16,7 @@ NominationWidget::NominationWidget(QList<QString> nomination) {
     QHBoxLayout *container = new QHBoxLayout;
     bigText->setContentsMargins(16, 16, 16, 16);
     bigText->setMaximumWidth(874/2 - 16*2 - 8);
-    QFont font = bigText->font();
-    font.setPointSize(60);
-    bigText->setFont(font);
+    bigText->setStyleSheet(MARKER_LABLE);
     bigText->setForegroundRole(QPalette::Text);
     container->setAlignment(Qt::AlignLeft);
     mainLayout->addLayout(container);
