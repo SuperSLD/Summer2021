@@ -54,6 +54,7 @@ QList<int> BaseSort::generateStartArray(int size) {
         newList.append(i);
     }
     for (int i = 0; i < size; i++) {
+        // устаревшее но у полины иначе не запускалось.
         std::swap(newList[i], newList[qrand()%size]);
     }
     return newList;
@@ -86,4 +87,22 @@ QString BaseSort::getSourceCode() {
 
 QList<QList<QString>> BaseSort::getMarkers() {
     return this->markers;
+}
+
+QList<QList<QString>> BaseSort::getAllMarkers() {
+    return this->allMarkers;
+}
+
+bool BaseSort::containMarker(QList<QList<QString>> filterMarkers) {
+    bool contain = true;
+    for (int j = 0; j < filterMarkers.size(); j++) {
+        bool containCurrent = false;
+        for (int i = 0; i < getMarkers().size(); i++) {
+            if (markers[i][0] == filterMarkers[j][0]) {
+                containCurrent = true;
+            }
+        }
+        if (!containCurrent) contain = false;
+    }
+    return contain;
 }

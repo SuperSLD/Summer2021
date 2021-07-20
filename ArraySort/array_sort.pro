@@ -21,6 +21,7 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     models/comparisonmodel.cpp \
+    models/filtermodel.cpp \
     models/idcontainer.cpp \
     sort/basesort.cpp \
     sort/catalog/bubblesort.cpp \
@@ -34,6 +35,7 @@ SOURCES += \
     sort/sortfactory.cpp \
     stylecontainer.cpp \
     ui/catalog/catalogfragment.cpp \
+    ui/catalog/filterfragment.cpp \
     ui/catalog/sortdetailfragment.cpp \
     ui/comparison/comparisonfragment.cpp \
     ui/comparison/selectfirstfragment.cpp \
@@ -43,6 +45,7 @@ SOURCES += \
     ui/splashfragment.cpp \
     ui/widgets/algstepwidget.cpp \
     ui/widgets/codeviewwidget.cpp \
+    ui/widgets/filteritemwidget.cpp \
     ui/widgets/nominationwidget.cpp \
     ui/widgets/slidingstackedwidget.cpp \
     ui/widgets/sortitemwidget.cpp \
@@ -58,6 +61,7 @@ HEADERS += \
     implfragmentfactory.h \
     mainwindow.h \
     models/comparisonmodel.h \
+    models/filtermodel.h \
     models/idcontainer.h \
     sort/basesort.h \
     sort/catalog/bubblesort.h \
@@ -71,6 +75,7 @@ HEADERS += \
     sort/sortfactory.h \
     stylecontainer.h \
     ui/catalog/catalogfragment.h \
+    ui/catalog/filterfragment.h \
     ui/catalog/sortdetailfragment.h \
     ui/comparison/comparisonfragment.h \
     ui/comparison/selectfirstfragment.h \
@@ -80,6 +85,7 @@ HEADERS += \
     ui/splashfragment.h \
     ui/widgets/algstepwidget.h \
     ui/widgets/codeviewwidget.h \
+    ui/widgets/filteritemwidget.h \
     ui/widgets/nominationwidget.h \
     ui/widgets/slidingstackedwidget.h \
     ui/widgets/sortitemwidget.h \

@@ -56,6 +56,8 @@ namespace styles{
             "font-size:14px;"
             "background-color:"+COLOR_BACKGROUND+";"
             "border:none;";
+    static const QString MARKER_LABLE =
+            "font-size:60px;";
 
     static const QString BUTTON_SOLID =
             "QPushButton {"
@@ -73,7 +75,7 @@ namespace styles{
     static const QString BUTTON_EMPTY =
             "QPushButton {"
             "color: "+COLOR_SECONDARY+";"
-            "background-color:"+COLOR_BACKGROUND+";"
+            "background-color: #00FFFFFF;"
             "border:1px solid "+COLOR_SECONDARY+";"
             "padding:8px;"
             "border-radius:8px;"
@@ -81,7 +83,6 @@ namespace styles{
             "}"
             "QPushButton:hover {"
             "color: "+COLOR_SECONDARY_PRESSED+";"
-            "background-color:"+COLOR_BACKGROUND+";"
             "border:1px solid "+COLOR_SECONDARY_PRESSED+";"
             "}";
 
@@ -154,6 +155,13 @@ namespace styles{
             "   padding: 8px;"
             "   border-radius:8px;"
             "   color:"+COLOR_SECONDARY+";"
+            "}";
+    static const QString CARD_LABLE =
+            "QLabel {"
+            "   background-color:#3F3F3F;"
+            "   font-size:16px;"
+            "   padding: 8px;"
+            "   border-radius:8px;"
             "}";
 };
 

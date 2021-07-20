@@ -93,8 +93,8 @@ void Navigator::removeOnRoot() {
 }
 
 void Navigator::backWhithData(BaseModel* model) {
+    stack[stack.size()-2]->bindData(model);
     back();
-    stack.last()->bindData(model);
 }
 
 void Navigator::navigateWhithData(QString tag, BaseModel* model) {

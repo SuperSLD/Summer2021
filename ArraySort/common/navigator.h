@@ -23,7 +23,7 @@ class Navigator: public QObject {
 private:
     SlidingStackedWidget *currentContainer;
     BaseFragmentFactory *screensFactory;
-    QLinkedList<BaseFragment*> stack;
+    QList<BaseFragment*> stack;
 
     /**
      * @brief createAndConnect

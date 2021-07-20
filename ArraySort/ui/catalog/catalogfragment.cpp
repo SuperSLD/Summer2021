@@ -24,6 +24,7 @@
 #include <ui/widgets/swgbutton.h>
 #include <ui/widgets/toolbarwidget.h>
 
+#include <models/filtermodel.h>
 #include <models/idcontainer.h>
 
 using namespace screens;
@@ -34,8 +35,9 @@ CatalogFragment::CatalogFragment() {
     QVBoxLayout *mainVLayout = new QVBoxLayout;
 
     // заголовок экрана
-    ToolbarWidget *toolbar = new ToolbarWidget("Справочник", true);
+    ToolbarWidget *toolbar = new ToolbarWidget("Справочник", true, "filter");
     connect(toolbar, &ToolbarWidget::onBackPressed, this, &CatalogFragment::onBack);
+    connect(toolbar, &ToolbarWidget::onButtinPressed, this, &CatalogFragment::onOpenFilter);
     mainVLayout->addWidget(toolbar);
 
     // зона прокрутки
@@ -78,10 +80,66 @@ CatalogFragment::~CatalogFragment() {
     delete itemsContainer;
 }
 
+void CatalogFragment::bindData(BaseModel* model) {
+    FilterModel *filterModel = dynamic_cast<FilterModel*>(model);
+    this->markers = filterModel->markers;
+
+    clearList(itemsContainer);
+    if (filterModel->markers.size() > 0) {
+        QHBoxLayout *cardsContainer = new QHBoxLayout();
+        cardsContainer->setContentsMargins(6,6,6,6);
+        cardsContainer->setAlignment(Qt::AlignLeft);
+        itemsContainer->addLayout(cardsContainer);
+
+        for (int i = 0; i < markers.size(); i++) {
+            cardsContainer->addWidget(createFilterCard(markers[i]));
+        }
+
+        for (int key = 0; key <= factory->getMaxKey(); key++) {
+            BaseSort *sort = factory->create(key);
+            if (sort->containMarker(this->markers)) {
+                SortItemWidget *sortWidget = new SortItemWidget(sort);
+                connect(sortWidget, &SortItemWidget::selectSort, this, &CatalogFragment::onSelectSort);
+                itemsContainer->addWidget(sortWidget);
+            }
+        }
+    } else {
+        for (int key = 0; key <= factory->getMaxKey(); key++) {
+            SortItemWidget *sortWidget = new SortItemWidget(factory->create(key));
+            connect(sortWidget, &SortItemWidget::selectSort, this, &CatalogFragment::onSelectSort);
+            itemsContainer->addWidget(sortWidget);
+        }
+    }
+}
+
 void CatalogFragment::onBack() {
     emit back();
 }
 
+void CatalogFragment::onOpenFilter() {
+    emit navigateWhithData(FILTER_TAG, new FilterModel(this->markers));
+}
+
 void CatalogFragment::onSelectSort(int key) {
     emit navigateWhithData(CATALOG_DETAIL_TAG, new IdContainer(key));
+}
+
+QLabel* CatalogFragment::createFilterCard(QList<QString> marker) {
+    // название маркера
+    QLabel *markerName = new QLabel(marker[0]);
+    markerName->setStyleSheet(CARD_LABLE);
+
+    // градиент для текста (ого он работает но почему там 0.1 хз)
+    QPalette labelPal;
+    QLinearGradient colorGradient = QLinearGradient(0, 0, markerName->width(), markerName->height());
+    colorGradient.setSpread(QGradient::RepeatSpread);
+    colorGradient.setColorAt(0, QColor("#F99272"));
+    colorGradient.setColorAt(0.1, QColor("#72B8F9"));
+    QBrush brush(colorGradient);
+    labelPal.setBrush(QPalette::ColorRole::Text, brush);
+    markerName->setForegroundRole(QPalette::Text);
+    markerName->setWordWrap(true);
+    markerName->setPalette(labelPal);
+
+    return markerName;
 }
