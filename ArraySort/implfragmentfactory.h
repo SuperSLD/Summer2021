@@ -18,6 +18,7 @@ namespace screens {
     static const QString VS_FIRST_TAG = "vs_first";
     static const QString VS_SECKND_TAG = "vs_second";
     static const QString VS_DETAIL_TAG = "vs_detail";
+    static const QString FILTER_TAG = "filter";
 
 };
 

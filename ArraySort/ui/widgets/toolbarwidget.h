@@ -21,10 +21,11 @@ public:
      *
      * @param title название экрана которое увидит пользователь.
      */
-    ToolbarWidget(QString title, bool showBack = false);
+    ToolbarWidget(QString title, bool showBack = false, QString icon = "");
     ~ToolbarWidget();
 signals:
     void onBackPressed();
+    void onButtinPressed();
 };
 
 #endif // TOOLBARWIDGET_H

@@ -187,6 +187,16 @@ public:
      * @return все маркеры
      */
     QList<QList<QString>> getAllMarkers();
+
+    /**
+     * @brief containMarker
+     *
+     * Проверка на наличие всех маркеров из списка.
+     *
+     * @param filterMarkers маркеры из фильтра.
+     * @return содержатся ли маркеры в списке.
+     */
+    bool containMarker(QList<QList<QString>> filterMarkers);
 };
 
 #endif // BASESORT_H

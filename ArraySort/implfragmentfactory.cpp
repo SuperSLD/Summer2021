@@ -7,6 +7,7 @@
 #include <ui/splashfragment.h>
 
 #include <ui/catalog/catalogfragment.h>
+#include <ui/catalog/filterfragment.h>
 #include <ui/catalog/sortdetailfragment.h>
 
 #include <ui/comparison/comparisonfragment.h>
@@ -36,6 +37,8 @@ BaseFragment* ImplFragmentFactory::create(QString tag) {
         return new SelectSecondFragment;
     } else if (tag == VS_DETAIL_TAG) {
         return new ComparisonFragment;
+    } else if (tag == FILTER_TAG) {
+        return new FilterFragment;
     } else {
         return nullptr;
     }

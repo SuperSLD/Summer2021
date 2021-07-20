@@ -3,6 +3,6 @@
         <file>resc/icon.ico</file>
         <file>resc/splash.svg</file>
         <file>resc/arrow_back.svg</file>
-        <file>resc/cool.svg</file>
+        <file>resc/filter.svg</file>
     </qresource>
 </RCC>
