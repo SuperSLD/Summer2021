@@ -20,13 +20,13 @@ ConfitmExitFramgent::ConfitmExitFramgent() {
     QHBoxLayout *startContent = new QHBoxLayout;
 
     QVBoxLayout *startVerticalContent = new QVBoxLayout;
-    QLabel *title = new QLabel("Выход");
+    QLabel *title = new QLabel("Закрыть приложение?");
     QLabel *subtitle = new QLabel("Вы точно уверены что хотите выйти из приложения?");
 
     QVBoxLayout *buttonContainer = new QVBoxLayout;
 
     QPushButton *loginButton = new QPushButton("Отмена");
-    QPushButton *regButton = new QPushButton("Выйти");
+    QPushButton *regButton = new QPushButton("Закрыть");
 
     title->setStyleSheet(TITLE_LABLE);
     subtitle->setStyleSheet(HINT_LABLE);
